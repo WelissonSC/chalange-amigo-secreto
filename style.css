@@ -1,5 +1,6 @@
 :root {
     --color-primary: #4B69FD;
+    --color-hover: #2e47c5;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
     --color-button: #fe652b;
@@ -88,7 +89,8 @@ body {
 }
 
 .button-container {
-    width: 300px;
+    display: flex;
+    width: 495px;
     justify-content: center;
 }
 
@@ -156,6 +158,16 @@ ul {
 .button-draw img {
     margin-right: 40px;
 }
+
+.button-newDraw {
+    background-color: var(--color-primary);
+    margin-left: 20px;
+}
+
+.button-draw.button-newDraw:hover {
+    background-color: var(--color-hover);
+}
+
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
