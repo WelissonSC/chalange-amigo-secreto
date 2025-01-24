@@ -17,16 +17,12 @@ function adicionarAmigo() {
     }
 }
 
-
-function catElement(tag) {
-    const listaAmigos = document.querySelector(tag);
-    return listaAmigos;
-}
-
-function createElement(element) {
-    const amigos = document.createElement(element);
-    return amigos;
-}
+//Essa funcionalidade é um escutador que pega o evento do enter e atribui uma função a ele com arrow function
+addEventListener('keypress', event => {
+    if (event.key == 'Enter') {
+        adicionarAmigo();
+    }
+})
 
 //Função impede que o usuário coloque um nome que já tem na lista, passando o paramentro do nome
 function verificaRedundancia(nome) {
@@ -43,12 +39,8 @@ function verificaRedundancia(nome) {
 
 //função que cria um elemnto li e coloca um texto dentro
 function insereNOCampo() {
-    const listaAmigos =  catElement('#listaAmigos');
-    const amigos = createElement('li');
-
-
+    const amigos = creatFields('#listaAmigos', 'li');
     for (let i = 0; i < amigosList.length; i++) {
-       listaAmigos.appendChild(amigos);
         amigos.innerHTML = amigosList[i];
     }
 }
@@ -66,13 +58,13 @@ function geraIndiceAleatorio() {
     return posicaoIndice;
 }
 
-//insere no html o nome sorteado recebendo o nome sorteado como paramentro
-function insereNomeSorteado(nome) {
-    const resultadoArea = catElement('#resultado')
-    const nomeSorteado = createElement('li');
-    
-    resultadoArea.appendChild(nomeSorteado);
-    nomeSorteado.innerHTML = nome;
+//função para criar elemento li e pegar o campo
+function creatFields(tag, element) {
+    const ulAmigos = document.querySelector(tag);
+    const liField = document.createElement(element);
+    ulAmigos.appendChild(liField);
+    return liField;
+
 }
 
 //invoca inserirNome sortado caso o array não seja um array vazio
@@ -82,14 +74,25 @@ function sortearAmigo() {
         alert('Por favor, Adicione algum nome a lista!')
     } else {
         let nome = amigosList[numeroSorteado];
-        insereNomeSorteado(nome);
+        let result = creatFields('#resultado', 'li');
+        result.innerHTML = nome;
     }
 }
 
+//function que apenas coloca um autofocus sem precisar na estrutra fo html
 function focaCampo() {
     nomeAmigo = document.querySelector('#amigo').focus();
 }
 
-
+//função que limpa todos os li's dos campos para poder inserir novas pessoas e fazer um novo sorteio
+function novoSorteio() {
+    amigosList = [];
+    const fieldResul = document.querySelector('#resultado');
+    const fieldLista = document.querySelector('#listaAmigos');
+    fieldLista.innerHTML = '';
+    fieldResul.innerHTML = '';
+    console.log(amigosList);
+    focaCampo();
+}
 
 
