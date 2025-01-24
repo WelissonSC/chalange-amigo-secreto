@@ -1,5 +1,3 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
-
 //array(lista) onde ficaram os nomes das pessoas 
 let amigosList = [];
 //coloca um autofocus no campo de digitar um nome sem alterar o html
@@ -91,7 +89,6 @@ function novoSorteio() {
     const fieldLista = document.querySelector('#listaAmigos');
     fieldLista.innerHTML = '';
     fieldResul.innerHTML = '';
-    console.log(amigosList);
     focaCampo();
 }
 
