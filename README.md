@@ -15,7 +15,7 @@
  <img src="https://www.p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-details.png" alt="HTML, CSS e JS logo" width="300" height="100"/>
 
 ### <h2>Acesso ao projeto<h2/>
- <p> Você pode acessar e testar o projeto pelo <a href="https://developer.android.com/studio" target="_blank"> Vercel </a></p>
+ <p> Você pode acessar e testar o projeto pelo <a href="https://chalange-amigo-secreto.vercel.app/" target="_blank"> Vercel </a></p>
 
  <h2>Desenvolvedores<h2/>
 
